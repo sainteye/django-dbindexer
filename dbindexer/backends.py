@@ -105,7 +105,7 @@ class BaseResolver(object):
         else:
             try:
                 setattr(query.objs[0], lookup.index_name, lookup.convert_value(value))
-            except ValueError, e:
+            except ValueError as e:
                 '''
                 If lookup.index_name is a foreign key field, we need to set the actual
                 referenced object, not just the id.  When we try to set the id, we get an

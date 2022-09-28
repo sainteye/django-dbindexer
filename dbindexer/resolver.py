@@ -17,7 +17,7 @@ class Resolver(object):
         module_name, attr_name = path.rsplit('.', 1)
         try:
             mod = import_module(module_name)
-        except (ImportError, ValueError), e:
+        except (ImportError, ValueError) as e:
             raise ImproperlyConfigured('Error importing backend module %s: "%s"'
                 % (module_name, e))
         try:
