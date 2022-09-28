@@ -1,3 +1,5 @@
+import six
+
 from django.conf import settings
 from django.utils.importlib import import_module
 
@@ -5,7 +7,7 @@ from django.utils.importlib import import_module
 def merge_dicts(d1, d2):
     '''Update dictionary recursively. If values for a given key exist in both dictionaries and are dict-like they are merged.'''
 
-    for k, v in d2.iteritems():
+    for k, v in six.iteritems(d2):
 
         # Try to merge the values as if they were dicts.
         try:
